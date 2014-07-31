@@ -15,12 +15,10 @@ MyApp.addInitializer(function() {
 	
 });
 
-//User model
 var UserModel = Backbone.Model.extend({
 	url: "delete"
 });
 
-//user collection
 var MultiUsersCollection = Backbone.Collection.extend({
 	model: UserModel,
 	url: "js/users.json",
@@ -28,7 +26,6 @@ var MultiUsersCollection = Backbone.Collection.extend({
 	initialize: function() {}
 });
 
-//User view
 var UserItemView = Backbone.Marionette.ItemView.extend({
 	template: Handlebars.compile($("#userTemplate").html()),
 	tagName: "tr",
