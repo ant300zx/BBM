@@ -1,7 +1,7 @@
 var MyApp = new Backbone.Marionette.Application();
 
 MyApp.addRegions({
-  mainRegion: "#clientTable"
+	mainRegion: "#clientTable"
 });
 
 MyApp.addInitializer(function() {
