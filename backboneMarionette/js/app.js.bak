@@ -21,8 +21,7 @@ var UserModel = Backbone.Model.extend({
 
 var MultiUsersCollection = Backbone.Collection.extend({
 	model: UserModel,
-	localStorage: new Backbone.LocalStorage("user"),
-	//url: "js/users.json",
+	url: "js/users.json",
 
 	initialize: function() {}
 });
@@ -58,7 +57,7 @@ var UsersCompositeView = Backbone.Marionette.CompositeView.extend({
 
 	addUser: function(e) {
 		
-		this.collection.create({ 	
+		this.collection.add({ 	
 			firstname: this.el.newFirstName.value,
 			lastname: this.el.newLastName.value
 		});
