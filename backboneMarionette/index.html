@@ -22,6 +22,7 @@
 					<tr class="header">
 						<th>Firstname</th>
 						<th>Lastname</th>
+						<th></th>
 						<th>Delete</th>
 					</tr>
 			
@@ -34,10 +35,11 @@
 		</script>
 
 		<script id="userTemplate" type="text/template">
-			<td>{{firstname}}</td>
-			<td>{{lastname}}</td>
+			<td><input type="text" class="updateFirstName" maxlength="50" size="15" value="{{firstname}}" /></td>
+			<td><input type="text" class="updateLastName" maxlength="50" size="15" value="{{lastname}}" /></td>
+			<td><input type="button" class="updateName" value="Update" /></td>
 			<td style="text-align: center;"><a class="delete" href="#">x</a></td>
-
+			<td class="savedMessage" style="display:none">User updated</td>
 		</script>
 		
 		<script src="js/jquery-1.7.1.min.js"></script>

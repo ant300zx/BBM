@@ -33,11 +33,20 @@ var UserItemView = Backbone.Marionette.ItemView.extend({
 	className: "singleUser",
 
 	events: {
-		"click a.delete": "deleteUser"
+		"click a.delete": "deleteUser",
+		"click input.updateName": "updateUserName"
 	},
-
 	deleteUser: function() {
 		this.model.destroy();
+	},
+	updateUserName: function(e) {
+		//var self = this;
+		this.model.save({
+			firstname: this.el.querySelector(".updateFirstName").value,
+			lastname: this.el.querySelector(".updateLastName").value
+		}).done(_.bind(function () {
+			this.$(".savedMessage").show().delay(1000).fadeOut();
+		}, this));
 	}
 });
 
@@ -50,6 +59,7 @@ var UsersCompositeView = Backbone.Marionette.CompositeView.extend({
 		method: "POST"
 	},
 	itemView: UserItemView,
+
 	itemViewContainer: 'tbody',
 
 	events: {
