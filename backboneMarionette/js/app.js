@@ -40,7 +40,6 @@ var UserItemView = Backbone.Marionette.ItemView.extend({
 		this.model.destroy();
 	},
 	updateUserName: function(e) {
-		//var self = this;
 		this.model.save({
 			firstname: this.el.querySelector(".updateFirstName").value,
 			lastname: this.el.querySelector(".updateLastName").value
@@ -68,7 +67,7 @@ var UsersCompositeView = Backbone.Marionette.CompositeView.extend({
 
 	addUser: function(e) {
 		
-		this.collection.create({ 	
+		this.collection.create({
 			firstname: this.el.newFirstName.value,
 			lastname: this.el.newLastName.value
 		});
